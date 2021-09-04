@@ -31,8 +31,9 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         title = get_object_or_404(Title, id=self.kwargs.get('title_id'))
-        queryset = Review.objects.filter(title=title)
-        return queryset
+        # queryset = Review.objects.filter(title=title)
+        # return queryset
+        return Review.objects.filter(title=title)
 
 
 class CommentViewSet(viewsets.ModelViewSet):
@@ -54,8 +55,9 @@ class CommentViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         review_id = self.kwargs.get('review_id')
         review = get_object_or_404(Review, id=review_id)
-        comments = review.reviews_comments.all()
-        return comments
+        return review.reviews_comments.all()
+        # comments = review.reviews_comments.all()
+        # return comments
 
 
 class CategoryGenreViewSet(viewsets.GenericViewSet,
