@@ -4,6 +4,7 @@ on: [push]
 
 env:
   ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
 jobs:
   tests:
