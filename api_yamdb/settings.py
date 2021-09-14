@@ -1,23 +1,22 @@
-import environ
 import os
 from datetime import timedelta
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
+# env = environ.Env(
+#     # set casting, default value
+#     DEBUG=(bool, False)
+# )
 # env = environ.Env()
 
 # read th .env file
-environ.Env.read_env()
+# environ.Env.read_env()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs')
 
-DEBUG = env('DJANGO_DEBUG')
+DEBUG = os.environ.get('DJANGO_DEBUG', False)
 
-ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(' ')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -66,12 +65,12 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DB_ENGINE', default='django.db.backends.postgresql'),
-        'NAME': os.environ.get('DB_NAME', default='postgres'),
+        'ENGINE': os.environ.get('DB_ENGINE', 'django.db.backends.postgresql'),
+        'NAME': os.environ.get('DB_NAME', 'postgres'),
         'USER': os.environ.get('POSTGRES_USER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST', default='db'),
-        'PORT': int(os.environ.get('DB_PORT', default='5432')),
+        'HOST': os.environ.get('DB_HOST', 'db'),
+        'PORT': int(os.environ.get('DB_PORT', '5432')),
     }
 }
 
