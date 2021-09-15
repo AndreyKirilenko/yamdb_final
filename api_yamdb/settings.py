@@ -7,6 +7,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='p&l%385148kslhtyn^##a1)ilz@4z
 
 DEBUG = True
 ALLOWED_HOSTS = ['http://84.201.179.146', 'localhost', '127.0.0.1']
+
 # ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(' ')
 
 INSTALLED_APPS = [
