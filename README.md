@@ -24,6 +24,9 @@
     POSTGRES_PASSWORD=<db_password> # пароль для подключения к БД
     DB_HOST=<db> # название сервиса
     DB_PORT=<5432> # порт для подключения к БД
+    SECRET_KEY=<p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs>
+    DJANGO_DEBUG=<True>
+    ALLOWED_HOSTS=<http://84.201.179.146 localhost 127.0.0.1 web>
 ```
 * Выполните сборку образов и запуск контейнеров
 ```bash
