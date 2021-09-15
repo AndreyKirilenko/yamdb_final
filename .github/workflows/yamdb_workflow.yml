@@ -74,7 +74,7 @@ jobs:
             sudo docker pull akirosan/yamdb_final
             sudo docker-compose stop
             sudo docker-compose rm web
-            sudo docker sustem prune
+            sudo docker system prune
             # Создаст файл для переменных окружения
             touch .env 
             # Наполнит файл переменными окружения из секретов GitHub
