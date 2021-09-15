@@ -74,6 +74,7 @@ jobs:
             sudo docker pull akirosan/yamdb_final
             sudo docker-compose stop
             sudo docker-compose rm web
+            sudo docker sustem prune
             # Создаст файл для переменных окружения
             touch .env 
             # Наполнит файл переменными окружения из секретов GitHub
@@ -85,7 +86,7 @@ jobs:
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
             echo DJANGO_DEBUG=${{ secrets.DJANGO_DEBUG }} >> .env
-            echo ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }} >> .env
+            # echo ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }} >> .env
             sudo docker-compose up -d
   send_message:
     runs-on: ubuntu-latest
@@ -96,4 +97,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: ${{ github.workflow }} успешно выполнен. Все круто чувак, расслабся выпей пивка!
+        message: ${{ github.workflow }} успешно выполнен!
