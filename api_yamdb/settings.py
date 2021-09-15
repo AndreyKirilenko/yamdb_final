@@ -3,7 +3,7 @@ from datetime import timedelta
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'SecRetKeyeDitNoW!!!')
+SECRET_KEY = os.environ.get('SECRET_KEY', default='cHaNgE-Me_NOW!!!')
 
 DEBUG = False
 
