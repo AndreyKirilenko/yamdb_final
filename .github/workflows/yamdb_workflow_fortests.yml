@@ -38,3 +38,14 @@ jobs:
         # cd yamdb_final/
                 # запустить написанные разработчиком тесты
         python manage.py test
+  
+    send_message:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+    - name: send message
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: ${{ github.workflow }} успешно выполнен!
