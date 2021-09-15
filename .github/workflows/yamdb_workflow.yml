@@ -1,4 +1,4 @@
-name: Django-test workflow
+name: Django-app workflow
 
 on: [push]
 
@@ -39,7 +39,6 @@ jobs:
                 # запустить написанные разработчиком тесты
         python manage.py test
 
-name: Django-app workflow
 
 on:
   push:
